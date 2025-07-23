@@ -6,7 +6,7 @@
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "21",             // <--- define JDK 21 explicitamente
-      "installMaven": true,
+      "installMaven": false,
       "installGradle": false
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
@@ -14,11 +14,15 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "vscjava.vscode-spring-initializr",
         "oracle.oracle-java",
         "redhat.vscode-xml",
         "jebbs.plantuml",
-        "redhat.java"
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "danielpinto8zz6.c-cpp-compile-run"
       ],
       "settings": {
         "java.configuration.runtimes": [
