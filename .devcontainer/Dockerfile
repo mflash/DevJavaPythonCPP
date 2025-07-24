@@ -4,8 +4,8 @@ FROM mcr.microsoft.com/devcontainers/java:1-21-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Atualização de pacotes e instalação do Graphviz, Python e GCC/G++ em um único layer
-RUN uv python install && \
-    apt-get update && \
+# Python precisa ser instalado pós-inicialização com uv python install (pelo terminal)
+RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y graphviz g++ && \
     apt-get clean && \
