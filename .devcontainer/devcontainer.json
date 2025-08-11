@@ -21,7 +21,8 @@
         "ms-python.debugpy",
         "ms-python.python",
         "ms-vscode.cpptools",
-        "danielpinto8zz6.c-cpp-compile-run"
+        "danielpinto8zz6.c-cpp-compile-run",
+        "mathematic.vscode-pdf"
       ],
       "settings": {
         "java.configuration.runtimes": [
