@@ -1,5 +1,5 @@
 # Imagem base com Java 21 (OpenJDK) e Maven pré-instalados
-FROM mcr.microsoft.com/devcontainers/java:1-21-bookworm
+FROM mcr.microsoft.com/devcontainers/java:25-trixie
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
@@ -11,4 +11,5 @@ RUN apt-get update && \
     apt-get install -y graphviz gnuplot g++ && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
 
