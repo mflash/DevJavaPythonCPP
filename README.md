@@ -1,6 +1,6 @@
-# Desenvolvimento Java 21 / Python / C++
+# Desenvolvimento Java 25 / Python / C++
 - Repositório base para uso em disciplinas de desenvolvimento de software
-- Configurado para desenvolvimento em Java21, Python 3.13 e GCC/G++
+- Configurado para desenvolvimento em Java25, Python 3.13 e GCC/G++
 - Pensado para ser usado como "Monorepo" para uma série de projetos de aula
 - As instruções a seguir referem-se ao uso deste repositório em conjunto com o CodeSpaces
 
