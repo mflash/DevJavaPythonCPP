@@ -9,7 +9,7 @@ fi
 GROUP_ID=$1
 ARTIFACT_ID=$2
 
-echo "Criando projeto Maven '$ARTIFACT_ID' com groupId '$GROUP_ID' e Java 21..."
+echo "Criando projeto Maven '$ARTIFACT_ID' com groupId '$GROUP_ID' e Java 25..."
 
 BASE_DIR=$ARTIFACT_ID
 SRC_MAIN_JAVA="$BASE_DIR/src/main/java/$(echo $GROUP_ID | tr '.' '/')"
@@ -50,9 +50,9 @@ cat > "$BASE_DIR/pom.xml" << EOF
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>3.15.0</version>
         <configuration>
-          <release>21</release>
+          <release>25</release>
         </configuration>
       </plugin>
 
@@ -60,9 +60,22 @@ cat > "$BASE_DIR/pom.xml" << EOF
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.5.5</version>
         <configuration>
           <useModulePath>false</useModulePath>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.5.0</version>
+        <configuration>
+          <archive>
+             <manifest>
+               <mainClass>br.pucrs.App</mainClass>
+             </manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
@@ -99,7 +112,7 @@ EOF
 cat > "$BASE_DIR/README.md" << EOF
 # $ARTIFACT_ID
 
-Projeto Maven criado automaticamente com Java 21 e JUnit 5.
+Projeto Maven criado automaticamente com Java 25 e JUnit 5.
 
 ## Como compilar e rodar
 
@@ -116,4 +129,4 @@ mvn test
 
 EOF
 
-echo "Projeto '$ARTIFACT_ID' criado com sucesso com Java 21 e testes configurados."
+echo "Projeto '$ARTIFACT_ID' criado com sucesso com Java 25 e testes configurados."
